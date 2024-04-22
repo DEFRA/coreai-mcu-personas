@@ -1,13 +1,12 @@
-const server = require('./server')
+require('./insights').setup()
+const createServer = require('./server')
+const { initialiseTable } = require('./storage/repos/persona')
 
 const init = async () => {
+  const server = await createServer()
   await server.start()
+  await initialiseTable()
   console.log('Server running on %s', server.info.uri)
 }
-
-process.on('unhandledRejection', (err) => {
-  console.log(err)
-  process.exit(1)
-})
 
 init()

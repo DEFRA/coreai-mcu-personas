@@ -9,8 +9,8 @@ services:
     image: coreai-mcu-personas-development
     container_name: coreai-mcu-personas-development
     ports:
-      - "3000:3000"
-      - "9229:9229"
+      - "${CORE_AI_PERSONA_PORT:-3000}:3000"
+      - "${CORE_AI_PERSONA_DEBUG_PORT:-9229}:9229"
     volumes:
       - ./app:/home/node/app
       - ./test:/home/node/test
@@ -24,11 +24,9 @@ services:
     image: mcr.microsoft.com/azure-storage/azurite
     container_name: coreai-mcu-persona-azurite
     ports:
-      - "10000:10000"
-      - "10001:10001"
-      - "10002:10002"
+      - "${CORE_AI_PROMPTS_TABLE_PORT:-10002}:10002"
     volumes:
-      - ./azurite_data:/data
+      - azurite_data:/data
 
 volumes:
   azurite_data:
