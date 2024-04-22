@@ -1,0 +1,44 @@
+environment: production
+environmentCode:
+name: coreai-mcu-persona
+namespace: coreai-mcu
+workstream: coreai-mcu
+image: coreai-mcu-persona
+
+labels:
+  component: service
+
+appInsights:
+  connectionString:
+
+containerConfigMap:
+  name: coreai-mcu-persona-config-map
+
+containerSecret:
+  name: coreai-mcu-persona-container-secret
+  type: Opaque
+
+deployment: {}
+
+container:
+  requestMemory: 100Mi
+  requestCpu: 100m
+  limitMemory: 100Mi
+  limitCpu: 100m
+  port: 3000
+
+livenessProbe:
+  path: /healthz
+  port: 3000
+  initialDelaySeconds: 20
+  periodSeconds: 10
+  failureThreshold: 3
+  timeoutSeconds: 5
+
+readinessProbe:
+  path: /healthy
+  port: 3000
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  failureThreshold: 3
+  timeoutSeconds: 5

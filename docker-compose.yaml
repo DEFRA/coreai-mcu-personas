@@ -9,3 +9,7 @@ services:
       APPINSIGHTS_CLOUDROLE: coreai-mcu-personas-local
       APPINSIGHTS_CONNECTIONSTRING: ${APPINSIGHTS_CONNECTIONSTRING}
       AZURE_STORAGE_ACCOUNT: ${AZURE_STORAGE_ACCOUNT}
+
+  coreai-mcu-persona-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: coreai-mcu-persona-azurite
