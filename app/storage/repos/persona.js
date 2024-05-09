@@ -29,7 +29,7 @@ const formatPersona = (persona) => {
     name: persona.name,
     persona: persona.persona,
     version: persona.version,
-    rowKey: persona.rowKey
+    personaId: persona.rowKey
   }
 }
 
