@@ -28,7 +28,8 @@ const formatPersona = (persona) => {
     type: details[1],
     name: persona.name,
     persona: persona.persona,
-    version: persona.version
+    version: persona.version,
+    rowKey: persona.rowKey
   }
 }
 
