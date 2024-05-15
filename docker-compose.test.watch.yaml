@@ -1,0 +1,6 @@
+services:
+  coreai-mcu-personas:
+    command: >
+      sh -c "npm run test:watch"
+    volumes:
+      - ./.git:/home/node/.git

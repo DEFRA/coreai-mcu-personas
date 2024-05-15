@@ -1,0 +1,2 @@
+{{- define "coreai-mcu-personas.container" -}}
+{{- end -}}
