@@ -33,9 +33,7 @@ describe('App Insight setup', () => {
 
     test('should call mockApplicationInsights.setup with process.env.APPINSIGHTS_CONNECTIONSTRING', () => {
       insights.setup()
-      expect(mockApplicationInsights.setup).toHaveBeenCalledWith(
-        process.env.APPINSIGHTS_CONNECTIONSTRING
-      )
+      expect(mockApplicationInsights.setup).toHaveBeenCalledWith(process.env.APPINSIGHTS_CONNECTIONSTRING)
     })
 
     test('should call mockApplicationInsights.setup.start', () => {
@@ -50,11 +48,7 @@ describe('App Insight setup', () => {
 
     test('should have applicationName as value for mockApplicationInsights.defaultClient.context.tags[mockApplicationInsights.defaultClient.context.keys.cloudRole] key', () => {
       insights.setup()
-      expect(
-        mockApplicationInsights.defaultClient.context.tags[
-          mockApplicationInsights.defaultClient.context.keys.cloudRole
-        ]
-      ).toEqual(applicationName)
+      expect(mockApplicationInsights.defaultClient.context.tags[mockApplicationInsights.defaultClient.context.keys.cloudRole]).toEqual(applicationName)
     })
   })
 
@@ -75,11 +69,7 @@ describe('App Insight setup', () => {
 
     test('should have undefined as value for mockApplicationInsights.defaultClient.context.tags[mockApplicationInsights.defaultClient.context.keys.cloudRole] key', () => {
       insights.setup()
-      expect(
-        mockApplicationInsights.defaultClient.context.tags[
-          mockApplicationInsights.defaultClient.context.keys.cloudRole
-        ]
-      ).toBeUndefined()
+      expect(mockApplicationInsights.defaultClient.context.tags[mockApplicationInsights.defaultClient.context.keys.cloudRole]).toBeUndefined()
     })
   })
 })

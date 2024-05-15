@@ -5,7 +5,11 @@ const { initialiseTable } = require('./storage/repos/persona')
 const init = async () => {
   const server = await createServer()
   await server.start()
-  await initialiseTable()
+
+  if (process.env.INIT_STORAGE) {
+    await initialiseTable()
+  }
+  
   console.log('Server running on %s', server.info.uri)
 }
 
