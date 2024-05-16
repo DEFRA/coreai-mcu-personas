@@ -9,7 +9,7 @@ const init = async () => {
   if (process.env.INIT_STORAGE) {
     await initialiseTable()
   }
-  
+
   console.log('Server running on %s', server.info.uri)
 }
 
