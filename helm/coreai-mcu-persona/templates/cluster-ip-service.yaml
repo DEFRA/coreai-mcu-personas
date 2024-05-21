@@ -1,3 +1,0 @@
-{{- include "ffc-helm-library.cluster-ip-service" (list . "coreai-mcu-persona.cluster-ip-service") -}}
-{{- define "coreai-mcu-persona.cluster-ip-service" -}}
-{{- end -}}

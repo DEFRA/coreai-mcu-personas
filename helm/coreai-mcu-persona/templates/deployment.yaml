@@ -1,8 +1,0 @@
-{{- include "ffc-helm-library.deployment" (list . "coreai-mcu-persona.deployment") -}}
-{{- define "coreai-mcu-persona.deployment" -}}
-spec:
-  template:
-    spec:
-      containers:
-      - {{ include "ffc-helm-library.container" (list . "coreai-mcu-persona.container") }}
-{{- end -}}
