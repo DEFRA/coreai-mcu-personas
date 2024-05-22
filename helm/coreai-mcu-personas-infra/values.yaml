@@ -1,7 +1,7 @@
 storageAccounts:
   - name: 'coreaimcu'
     owner: 'no'
-    blobContainers:
+    tables: 
       - name: 'personas'
         roleAssignments:
-          - roleName: 'BlobDataContributor'
+          - roleName: 'TableDataContributor'
