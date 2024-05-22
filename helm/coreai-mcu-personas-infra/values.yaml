@@ -1,5 +1,6 @@
 storageAccounts:
   - name: 'coreaimcu'
+    owner: 'no'
     blobContainers:
       - name: 'personas'
         roleAssignments:
