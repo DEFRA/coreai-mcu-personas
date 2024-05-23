@@ -9,19 +9,25 @@ services:
     image: coreai-mcu-personas-development
     container_name: coreai-mcu-personas-development
     ports:
-      - "3000:3000"
-      - "9229:9229"
+      - "${CORE_AI_PERSONA_PORT:-3000}:3000"
+      - "${CORE_AI_PERSONA_DEBUG_PORT:-9229}:9229"
     volumes:
       - ./app:/home/node/app
       - ./test:/home/node/test
       - ./scripts:/home/node/scripts
       - ./package.json:/home/node/package.json
+  environment:
+      AZURE_STORAGE_USE_CONNECTION_STRING: ${AZURE_STORAGE_USE_CONNECTION_STRING:-true}
+      AZURE_STORAGE_CONNECTION_STRING: ${AZURE_STORAGE_CONNECTION_STRING}
+      INIT_STORAGE: ${INIT_STORAGE:-true}
 
-  coreai-mcu-personas-postgres:
+  coreai-mcu-persona-azurite:
+    image: mcr.microsoft.com/azure-storage/azurite
+    container_name: coreai-mcu-persona-azurite
     ports:
-      - "5432:5432"
+      - "${CORE_AI_PROMPTS_TABLE_PORT:-10002}:10002"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - azurite_data:/data
 
 volumes:
-  postgres_data:
+  azurite_data:

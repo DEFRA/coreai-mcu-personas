@@ -3,7 +3,11 @@
 set -e
 projectRoot="$(a="/$0"; a=${a%/*}; a=${a:-.}; a=${a#/}/; cd "$a/.." || return; pwd)"
 
+<<<<<<< HEAD
 service="coreai-mcu-personas"
+=======
+service="coreai-mcu-persona"
+>>>>>>> 5672335 (Setup repo (#1))
 
 show_help() {
   echo "

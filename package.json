@@ -1,6 +1,6 @@
 {
   "name": "coreai-mcu-personas",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "",
   "homepage": "github.com?owner=defra&repo=coreai-mcu-personas&organization=defra",
   "main": "app/index.js",
@@ -19,8 +19,11 @@
   "contributors": [],
   "license": "OGL-UK-3.0",
   "dependencies": {
+    "@azure/data-tables": "^13.2.2",
+    "@azure/identity": "^4.1.0",
     "@hapi/hapi": "21.3.2",
-    "applicationinsights": "2.8.0"
+    "applicationinsights": "2.9.1",
+    "joi": "^17.12.3"
   },
   "devDependencies": {
     "jest": "29.7.0",
