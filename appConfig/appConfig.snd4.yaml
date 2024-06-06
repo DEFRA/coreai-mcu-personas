@@ -1,0 +1,6 @@
+- key: APPINSIGHTS_CONNECTIONSTRING
+  value: "{{servicename}}-APPINSIGHTS-CONNECTIONSTRING"
+  type: "keyvault"
+- key: AZURE_STORAGE_ACCOUNT
+  value: "{{servicename}}-AZURE-STORAGE-ACCOUNT"
+  type: "keyvault"
